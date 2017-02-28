@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CitizenScience.ViewModels
+
+@model LoginViewModel
+
+<div class="row">
+    <div class="col s12 m12">
+        <div class="card-panel white">
+            <span class="black-text">
+                <h3>Log in to your account</h3>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email)
+
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+
+                    <input type="submit" value="Log in" class="btn btn-default" />
+                }
+            </span>
+        </div>
+    </div>
+</div>

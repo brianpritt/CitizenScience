@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Security.Claims
+
+<h2>Research Login</h2>
+<hr />
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="index-middle">
+        <h4>Hello @User.Identity.Name!</h4>
+
+        @using (Html.BeginForm("LogOff", "Account"))
+        {
+            <input type="submit" class="btn btn-default" value="Log out" />
+        }
+    </div>
+    <hr>
+    <h5>Mailing List</h5>
+    <hr />
+}
+
+else
+{
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel grey">
+                <span class="black-text">
+                    <p>@Html.ActionLink("Log in", "Login", "Account")</p>
+                    <p>@Html.ActionLink("Register", "Register", "Account")</p>
+                </span>
+            </div>
+        </div>
+    </div>
+}
