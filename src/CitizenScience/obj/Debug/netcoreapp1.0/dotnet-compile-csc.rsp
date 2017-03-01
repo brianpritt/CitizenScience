@@ -7,8 +7,8 @@
 -debug:full
 -nostdlib
 -nologo
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\bin\Debug\netcoreapp1.0\CitizenScience.dll"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\bin\Debug\netcoreapp1.0\CitizenScience.dll"
 -r:"C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.dll"
 -r:"C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Cookies.dll"
@@ -196,15 +196,15 @@
 -r:"C:\Users\epicodus\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\epicodus\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\epicodus\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\obj\Debug\netcoreapp1.0\CitizenSciencedotnet-compile.deps.json",CitizenScience.deps.json
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Program.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Startup.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Controllers\AccountController.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Controllers\HomeController.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Migrations\20170228021643_Initial.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Migrations\20170228021643_Initial.Designer.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Migrations\ApplicationDbContextModelSnapshot.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Models\ApplicationDbContext.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\Models\ApplicationUser.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\ViewModels\LoginViewModel.cs"
-"c:\users\epicodus\documents\visual studio 2015\Projects\CitizenScience\src\CitizenScience\ViewModels\RegisterViewModel.cs"
+-resource:"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\obj\Debug\netcoreapp1.0\CitizenSciencedotnet-compile.deps.json",CitizenScience.deps.json
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Program.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Startup.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Controllers\AccountController.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Controllers\HomeController.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Migrations\20170228021643_Initial.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Migrations\20170228021643_Initial.Designer.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Migrations\ApplicationDbContextModelSnapshot.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Models\ApplicationDbContext.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\Models\ApplicationUser.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\ViewModels\LoginViewModel.cs"
+"C:\Users\epicodus\Desktop\CitizenScience\src\CitizenScience\ViewModels\RegisterViewModel.cs"

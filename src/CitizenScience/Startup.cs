@@ -7,6 +7,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using CitizenScience.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace CitizenScience
 {
@@ -31,10 +35,15 @@ namespace CitizenScience
                 .AddDefaultTokenProviders();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseIdentity();
             app.UseStaticFiles();
+            loggerFactory.AddConsole();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
