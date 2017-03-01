@@ -21,8 +21,14 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Admin", "Index", "Account")</li>
-
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                      <li>@Html.ActionLink("Profile", "Index", "Account")</li>
+                    }
+                    else
+                    {
+                      <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
+                    }
                 </ul>
             </div>
         </nav>
