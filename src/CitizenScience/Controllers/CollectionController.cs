@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CitizenScience.Controllers
 {
-    public class CollectionPortal : Controller
+    public class CollectionController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()

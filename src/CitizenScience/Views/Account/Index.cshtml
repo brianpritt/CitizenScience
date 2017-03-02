@@ -18,7 +18,12 @@
         }
     </div>
     <hr>
-    <h5>Mailing List</h5>
+    <h5>@Html.ActionLink("Collection Portal", "Index", "Collection")</h5>
+    <h5>@Html.ActionLink("Research Portal", "Index", "Research")</h5>
+    @using (Html.BeginForm("LogOff", "Account")) { 
+        <input type="submit" class="btn" value="View Submission History" />
+        //ajax call not written for this yet.. create scripts file
+    }
     <hr />
 }
 
@@ -28,8 +33,8 @@ else
         <div class="col s12 m12">
             <div class="card-panel grey">
                 <span class="black-text">
-                    <p>@Html.ActionLink("Log in", "Login", "Account")</p>
-                    <p>@Html.ActionLink("Register", "Register", "Account")</p>
+                    <h5>@Html.ActionLink("Log in", "Login", "Account")</h5>
+                    <h5>@Html.ActionLink("Register", "Register", "Account")</h5>
                 </span>
             </div>
         </div>

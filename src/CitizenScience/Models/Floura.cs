@@ -17,5 +17,6 @@ namespace CitizenScience.Models
         public int FlouraHeight { get; set; }
         public string FlouraColor { get; set; }
         public int FlouraLocatoin { get; set; }
+        public virtual ApplicationUser Submitter { get; set; }
     }
 }
