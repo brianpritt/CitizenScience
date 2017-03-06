@@ -36,3 +36,6 @@ textarea {
     display: none
   }
 }
+select{
+    display:inline-block;
+}

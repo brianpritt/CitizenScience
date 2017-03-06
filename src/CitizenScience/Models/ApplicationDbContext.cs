@@ -9,7 +9,9 @@ namespace CitizenScience.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        
+        public DbSet<Fauna> Faunas {get;set;}
+
+
         public ApplicationDbContext()
         {
 

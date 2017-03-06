@@ -1,0 +1,40 @@
+﻿<script src="~/js/CollectionForm.js"></script>
+@{
+}
+<h3>Collection Form</h3>
+<form class="theform" method="post">
+    <input type="text" id="title" name="title" />
+    <input type="file" id="picture" name="picture" />
+    <input type="text" id="description" name="description" />
+    <input type="text" id="height" name="height" />
+    <input type="text" id="length" name="length" />
+    <input type="text" id="location" name="location" />
+    <button class="btn" type="submit">Submit Data</button>
+
+</form>
+<!---
+//(User.Identity.IsAuthenticated)
+//{  
+    <form id="form-type" method="post">
+        <select class="select-form">
+            <option value="1">Fauna</option>
+            <option value="2">Flora</option>
+            <option value="3">Geology</option>
+        </select>
+        <input type="submit" class="btn" value="Load Form" />
+    </form>
+<form id="fauna">
+    <input type="submit" class="btn" value="Fauna" />
+</form>
+<form id="flora">
+    <input type="submit" class="btn" value="Flora" />
+</form>
+<form id="geology">
+    <input type="submit" class="btn" value="Geology" />
+</form>
+<div class="form-placement"></div>
+<!--}
+//else
+//{
+    <h3>Please log in or register to use this resource.</h3>
+//} -->
