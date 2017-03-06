@@ -2,13 +2,19 @@
 @{
 }
 <h3>Collection Form</h3>
-<form class="theform" method="post">
+<form class="theform" asp-action="Create" asp-controller="Collection" method="post">
+    <label for="title">Name of species</label>
     <input type="text" id="title" name="title" />
-    <input type="file" id="picture" name="picture" />
+    <br />
+    <label for="picture">Photo</label>
+    <input type="file" id="picture" name="picture" class="btn" />
+    <br />
     <input type="text" id="description" name="description" />
     <input type="text" id="height" name="height" />
+    <br />
     <input type="text" id="length" name="length" />
     <input type="text" id="location" name="location" />
+    <br />
     <button class="btn" type="submit">Submit Data</button>
 
 </form>

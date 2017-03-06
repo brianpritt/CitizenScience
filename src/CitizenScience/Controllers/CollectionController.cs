@@ -16,6 +16,7 @@ namespace CitizenScience.Controllers
         {
             return View();
         }
+        [HttpPost]
         public IActionResult Create(IFormFile picture, string name, string description, int length, int height, string color, string location)
         {
             byte[] newPicture = new byte[0];
