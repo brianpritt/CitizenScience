@@ -5,12 +5,13 @@
     string photoImage = "";
     if (item.FaunaPhoto != null)
     {
-        var base64File = Convert.ToBase64String(item.FaunaPhoto);
-        photoImage = String.Format("data:image/gif;base64,{0}", base64File);
-
+        
+        photoImage = String.Format("data:image/gif;base64," + Convert.ToBase64String(item.FaunaPhoto));
+        <h3>its here</h3>
+        
     }
     <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
-        <img src="@photoImage" />
+        <img src="@photoImage" alt="@item.FaunaPhoto.Length"/>
         <p>@item.FaunaPhoto</p>
 }
 
