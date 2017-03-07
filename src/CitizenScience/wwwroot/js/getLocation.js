@@ -9,22 +9,25 @@
 
         function success(pos) {
             var crd = pos.coords;
-            console.log("success")
+            console.log("success");
+            
+          
+            console.log(`Lat:` + crd.latitude);
+            console.log(`Long:` + crd.longitude);
 
-            console.log('Your current position is:');
-            console.log(`Latitude : ${crd.latitude}`);
-            console.log(`Longitude: ${crd.longitude}`);
-            console.log(`More or less ${crd.accuracy} meters.`);
-            return crd;
+            $("#longitude").val(crd.longitude);
+            $("#latitude").val(crd.latitude);
+ 
         };
 
         function error(err) {
             console.warn(`ERROR(${err.code}): ${err.message}`);
+            console.log("if you are using chrome it is possible it is blocking access")
         };
 
         navigator.geolocation.getCurrentPosition(success, error, options);
     }
     else {
-        console.log("no location")
+        console.log("no location data, maybe change browser settings")
     }
 });

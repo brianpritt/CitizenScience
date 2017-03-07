@@ -18,18 +18,20 @@ namespace CitizenScience.Models
         public int FaunaLength { get; set; }
         public int FaunaHeight { get; set; }
         public string FaunaColor { get; set; }
-        public string FaunaLocation { get; set; }
+        public string FaunaLatitude { get; set; }
+        public string FaunaLongitude { get; set; }
         public virtual ApplicationUser Submitter { get; set; }
 
         public Fauna() { }
-        public Fauna(byte[] faunaPhoto, string faunaName, string faunaDescripion, int faunaLength, int faunaHeight, string faunaColor, string faunaLocation) {
+        public Fauna(byte[] faunaPhoto, string faunaName, string faunaDescripion, int faunaLength, int faunaHeight, string faunaColor, string faunaLatitude, string faunaLongitude) {
             FaunaPhoto = faunaPhoto;
             FaunaName = faunaName;
             FaunaDescripton = faunaDescripion;
             FaunaLength = faunaLength;
             FaunaHeight = faunaHeight;
             FaunaColor = faunaColor;
-            FaunaLocation = faunaLocation;
+            FaunaLatitude = faunaLatitude;
+            FaunaLongitude = faunaLongitude;
         }
     }
     

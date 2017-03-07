@@ -17,7 +17,7 @@ namespace CitizenScience.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(IFormFile picture, string name, string description, int length, int height, string color, string location)
+        public IActionResult Create(IFormFile picture, string name, string description, int length, int height, string color, string latitude, string longitude)
         {
             byte[] newPicture = new byte[0];
             if (picture != null)
@@ -29,7 +29,7 @@ namespace CitizenScience.Controllers
                     newPicture = ms.ToArray();
                 }
             }
-            Fauna newFauna = new Fauna(newPicture, name, description, length, height, color, location);
+            Fauna newFauna = new Fauna(newPicture, name, description, length, height, color, latitude, longitude);
             db.Faunas.Add(newFauna);
             db.SaveChanges();
             return RedirectToAction("Index");
