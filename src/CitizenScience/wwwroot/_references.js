@@ -1,5 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="js/collectionform.js" />
+/// <reference path="js/javascript.js" />
 /// <reference path="js/jquery-3.1.1.min.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />

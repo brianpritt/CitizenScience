@@ -35,6 +35,9 @@ namespace CitizenScience.Controllers
             return RedirectToAction("Index");
 
         }
-        
+        public IActionResult MapLocation()
+        {
+            return View();
+        }
     }
 }
