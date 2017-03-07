@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiAXq2qPEVUW9x2ILx3/u+wAAAAACAAAAAAAQZgAAAAEAACAAAACnGQp+aBiwEcNWnRnIxPV2+i9q8wcTOsdkFartTQo6lgAAAAAOgAAAAAIAACAAAAD3ziCVs6TPNybiwgJpLKGQqFVMLXwhSYR1TtHdULaRBZAAAADnsNkY3BVPvPPXFuIJMg19iUBEokGODd8q2wlTLjoE9KKjACto7m1QAr4QgYK8lCUueHrIJyWycR17IFWSxSNyqmGmdAMN6n1OctEdsSKuwyxsG0zoOBilqKbBQIgmmG7HW2t+7NpkCPddXU6Bgje2Zl3wfMHBF65XwUaxgFK9f7iyGKnUvIDmkucIdlk4R8RAAAAAOnFK7hHKaRnltfzQYk0I7CxI+vQU65bsm9jZHilxmbntIYstGftW6DDW8sJOQlSK/NXysCLElVoWkWozdDHfkQ==</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=(localdb)\MSSQLLocalDB;Database=CitizenScience2;Trusted_Connection=True;MultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="CitizenScience.Models.ApplicationDbContext">
+      <Value>moreclass</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

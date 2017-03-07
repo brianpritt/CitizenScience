@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-
+@using System.Security.Claims
 <html>
 <head>
 
@@ -24,7 +24,7 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                      <li>@Html.ActionLink("Profile", "Index", "Account")</li>
+                      <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
                     }
                     else
                     {

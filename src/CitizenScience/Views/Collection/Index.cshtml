@@ -1,23 +1,34 @@
 ﻿<script src="~/js/CollectionForm.js"></script>
 @{
 }
-<h3>Collection Form</h3>
-<form class="theform" asp-action="Create" asp-controller="Collection" method="post">
-    <label for="title">Name of species</label>
-    <input type="text" id="title" name="title" />
-    <br />
-    <label for="picture">Photo</label>
-    <input type="file" id="picture" name="picture" class="btn" />
-    <br />
-    <input type="text" id="description" name="description" />
-    <input type="text" id="height" name="height" />
-    <br />
-    <input type="text" id="length" name="length" />
-    <input type="text" id="location" name="location" />
-    <br />
-    <button class="btn" type="submit">Submit Data</button>
+@if (User.Identity.IsAuthenticated)
+{
 
-</form>
+    <h3>Collection Form</h3>
+    <form class="theform" asp-action="Create" asp-controller="Collection" method="post">
+        <label for="title">Name of species</label>
+        <input type="text" id="title" name="title" />
+        <br />
+        <label for="picture">Photo</label>
+        <input type="file" id="picture" name="picture" class="btn" />
+        <br />
+        <input type="text" id="description" name="description" />
+        <input type="text" id="height" name="height" />
+        <br />
+        <input type="text" id="length" name="length" />
+        <input type="text" id="location" name="location" />
+        <br />
+        <button class="btn" type="submit">Submit Data</button>
+    </form>
+
+    <h3>Previous Submissions</h3>
+
+}
+else
+{
+    <h5>Please login to access this portal</h5>
+    <p><a href="Account/Index">Here</a></p>
+}
 <!---
 //(User.Identity.IsAuthenticated)
 //{  

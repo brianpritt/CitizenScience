@@ -1,0 +1,15 @@
+﻿@model List<CitizenScience.Models.Fauna>
+
+@foreach (CitizenScience.Models.Fauna item in Model)
+{
+    string photoImage = "";
+    if (item.FaunaPhoto != null)
+    {
+        var base64File = Convert.ToBase64String(item.FaunaPhoto);
+        photoImage = String.Format("data:image/gif;base64,{0}", base64File);
+
+    }
+    <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
+        <img src="@photoImage" />
+        <p>@item.FaunaPhoto</p>
+}

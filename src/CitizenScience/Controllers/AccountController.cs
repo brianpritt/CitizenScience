@@ -24,8 +24,16 @@ namespace CitizenScience.Controllers
 
         public IActionResult Index()
         {
-            
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+
+                var userSub = _db.Faunas.Where(p => p.Submitter.Id == _userManager.GetUserId(HttpContext.User));
+                return View(userSub.ToList());
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult Register()
         {

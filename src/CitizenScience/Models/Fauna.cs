@@ -21,7 +21,8 @@ namespace CitizenScience.Models
         public string FaunaLocation { get; set; }
         public virtual ApplicationUser Submitter { get; set; }
 
-        public Fauna(byte[] faunaPhoto, string faunaName, string faunaDescripion, int faunaLength, int faunaHeight, string faunaColor, string faunaLocation ) {
+        public Fauna() { }
+        public Fauna(byte[] faunaPhoto, string faunaName, string faunaDescripion, int faunaLength, int faunaHeight, string faunaColor, string faunaLocation) {
             FaunaPhoto = faunaPhoto;
             FaunaName = faunaName;
             FaunaDescripton = faunaDescripion;
