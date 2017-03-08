@@ -11,17 +11,32 @@
     <script>
         $(document).ready(function () {
             $('select').material_select();
-        });</script>
+            $(".button-collapse").sideNav();
+        });
+    </script>
 
     <title></title>
 </head>
 <body>
-    <div class="navbar-fixed">
+    
         <nav>
             <div class="nav-wrapper grey darken-2">
                 <a class="brand-logo">Citizen Science </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
+                    }
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
@@ -36,7 +51,7 @@
                 </ul>
             </div>
         </nav>
-    </div>
+    
 
     <div>
         @RenderBody()

@@ -4,15 +4,15 @@
 {
 
     <h3>Collection Form</h3>
-    <form class="theform" asp-action="Index" asp-controller="Collection" method="post" enctype="multipart/form-data">
-        <label for="title">Name of species</label>
-        <input type="text" id="title" name="title" />
+    <form class="theform" asp-action="Create" asp-controller="Collection" method="post" enctype="multipart/form-data">
+        <label for="name">Name of species</label>
+        <input type="text" id="title" name="name" required/>
         <br />
         <label for="picture">Photo</label>
         <input type="file" id="picture" name="picture" class="btn" />
         <br />
         <label for="description">Description</label>
-        <input type="text" id="description" name="description" />
+        <input type="text" id="description" name="description" required/>
         <br />
         <label for="height">Height</label>
         <input type="text" id="height" name="height" />
