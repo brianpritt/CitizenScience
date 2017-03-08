@@ -1,7 +1,8 @@
 ﻿
-select{
-    display:inline-block;
-}
 img{
     width:100px;
+}
+#map {
+        height: 400px;
+        width: 600px;
 }

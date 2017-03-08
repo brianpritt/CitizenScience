@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
-    
-    
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });</script>
+
     <title></title>
 </head>
 <body>
@@ -18,17 +21,17 @@
             <div class="nav-wrapper grey darken-2">
                 <a class="brand-logo">Citizen Science </a>
                 <ul class="right hide-on-med-and-down">
-                    
+
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                      <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
+                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
                     }
                     else
                     {
-                      <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
+                        <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
                     }
                 </ul>
             </div>
