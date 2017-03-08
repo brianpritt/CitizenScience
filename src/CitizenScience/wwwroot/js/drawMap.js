@@ -42,4 +42,22 @@ function markMap(lat, lon) {
         title: 'Hello World!'
     });
 }
-    
+
+//$(document).ready(function () {
+//    $("#data-form").submit(function (event) {
+//        var thisResult = $('#name').val();
+//        console.log(thisResult);
+//        $.ajax({
+//            url: '/Research/GetData',
+//            type: 'GET',
+//            data: $(this).serialize(),
+//            datatype: 'json',
+//            success: function (result) {
+
+//                for (i = 0; i < result.length; i++) {
+//                    $("#newdata").append(result[i].FaunaDescripton);
+//                }
+//            }
+//        }).error("that ajax call was faulty");
+//    })
+//})

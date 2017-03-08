@@ -15,14 +15,30 @@ namespace CitizenScience.Controllers
         public IActionResult Index()
         {
             if (User.Identity.IsAuthenticated)
-            { 
-                return View(db.Faunas.ToList());
+            {
+                List<Fauna> allList = db.Faunas.ToList();
+                return View(allList);
             }
             else
             {
                 return View();
             }
             
+        }
+        [HttpPost]
+        public IActionResult Index(string name) {
+            List<Fauna> result = new List<Fauna>();
+            var thisList = db.Faunas.ToList();
+            foreach(Fauna li in thisList)
+            {
+                if(name == li.FaunaDescripton)
+                {
+                    result.Add(li);
+                }
+            }
+            Console.WriteLine("This is result: " + result);
+            return View(result);
+
         }
     }
 }

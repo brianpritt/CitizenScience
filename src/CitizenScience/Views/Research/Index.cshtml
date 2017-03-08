@@ -1,20 +1,20 @@
-﻿@model List<CitizenScience.Models.Fauna>
+﻿@using CitizenScience.Models
 <script src="~/js/drawMap.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNmEdwEFOm_I2jY6WqN98p_QItuuYfF4s&callback=initMap"></script>
 
 
-    <form>
-        <hr />
-        <h3>Data Quick-Sort</h3>
-        <select name="name">
-            @foreach (CitizenScience.Models.Fauna item in Model)
-            {
-                <option value=@item.FaunaName>@item.FaunaDescripton</option>
-            }
-        </select>
-        <button type="submit" class="btn">Search</button>
-    </form>
-
+<form id="data-form" asp-action="Index" asp-controller="Research" method="post" enctype="multipart/form-data">
+    <hr />
+    <h3>Data Quick-Sort</h3>
+    <select name="name" id="name">
+        @foreach (Fauna item in Model)
+        {
+            <option value=@item.FaunaDescripton>@item.FaunaDescripton</option>
+        }
+    </select>
+    <button type="submit" class="btn">Search</button>
+</form>
+<div id="newdata"></div>
 <div class="row">
 
     @foreach (CitizenScience.Models.Fauna item in Model)
