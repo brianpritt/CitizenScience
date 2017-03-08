@@ -72,6 +72,8 @@ namespace CitizenScience.Migrations
 
                     b.Property<string>("FaunaColor");
 
+                    b.Property<DateTime>("FaunaDate");
+
                     b.Property<string>("FaunaDescripton");
 
                     b.Property<int>("FaunaHeight");

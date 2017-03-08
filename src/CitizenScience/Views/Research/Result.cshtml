@@ -1,0 +1,34 @@
+﻿@{
+
+    Layout = null;
+}
+@using CitizenScience.Models
+
+
+
+    @foreach (CitizenScience.Models.Fauna item in Model)
+    {
+        string photoImage = "";
+        if (item.FaunaPhoto != null)
+        {
+
+            photoImage = String.Format("data:image/gif;base64," + Convert.ToBase64String(item.FaunaPhoto));
+
+
+    <div class="results"></div>
+
+    <div class="col s12 m5 xs12">
+            <div class="card-panel teal">
+                <span class="white-text">
+                    <h5>Name: @item.FaunaName</h5>
+                    <hr />
+                    <h6>Description: @item.FaunaDescripton</h6>
+                    <p>Height: @item.FaunaHeight</p>
+                    <p>Length: @item.FaunaLength</p>
+                    <img src="@photoImage" alt="@item.FaunaPhoto.Length" />
+
+                </span>
+            </div>
+        </div>
+    }
+}

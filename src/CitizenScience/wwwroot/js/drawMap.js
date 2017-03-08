@@ -28,7 +28,7 @@ function error(err) {
 }
 navigator.geolocation.getCurrentPosition(success,error, options);
 
-function markMap(lat, lon) {
+function initMap(lat, lon) {
     var myLatLng = { lat: lat, lng: lon };
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -43,21 +43,41 @@ function markMap(lat, lon) {
     });
 }
 
-//$(document).ready(function () {
-//    $("#data-form").submit(function (event) {
-//        var thisResult = $('#name').val();
-//        console.log(thisResult);
-//        $.ajax({
-//            url: '/Research/GetData',
-//            type: 'GET',
-//            data: $(this).serialize(),
-//            datatype: 'json',
-//            success: function (result) {
+$(document).ready(function () {
+    $("#data-form").submit(function (event) {
+        event.preventDefault();
+        var thisResult = $('#name').attr("value");
+        console.log("Something: " + $(this));
+        $.ajax({
+            url: '/Research/Result/',
+            type: 'POST',
+            data: $(this).serialize(),
+            datatype: 'json',
+            success: function (result) {
+                console.log(result);
+                $("#newdata").html(result);
 
-//                for (i = 0; i < result.length; i++) {
-//                    $("#newdata").append(result[i].FaunaDescripton);
-//                }
-//            }
-//        }).error("that ajax call was faulty");
-//    })
-//})
+                }
+            })
+        })
+    })
+            ////<script>
+            ////    function initMap(flo, fla) {
+            ////        var longi = parseFloat(flo);
+            ////        var lati = parseFloat(fla);
+            ////        var myLatLng = { lat: lati, lng: longi };
+
+            ////        var map = new google.maps.Map(document.getElementById('map'), {
+            ////            zoom: 4,
+            ////            center: myLatLng
+            ////        });
+
+            ////        var marker = new google.maps.Marker({
+            ////            position: myLatLng,
+            ////            map: map,
+            ////            title: 'Hello World!'
+            ////        });
+            ////    }
+////    </script>
+
+ 

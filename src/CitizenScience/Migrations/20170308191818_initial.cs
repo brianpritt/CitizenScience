@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CitizenScience.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,6 +60,34 @@ namespace CitizenScience.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Faunas",
+                columns: table => new
+                {
+                    FaunaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    FaunaColor = table.Column<string>(nullable: true),
+                    FaunaDate = table.Column<DateTime>(nullable: false),
+                    FaunaDescripton = table.Column<string>(nullable: true),
+                    FaunaHeight = table.Column<int>(nullable: false),
+                    FaunaLatitude = table.Column<string>(nullable: true),
+                    FaunaLength = table.Column<int>(nullable: false),
+                    FaunaLongitude = table.Column<string>(nullable: true),
+                    FaunaName = table.Column<string>(nullable: true),
+                    FaunaPhoto = table.Column<byte[]>(nullable: true),
+                    SubmitterId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Faunas", x => x.FaunaId);
+                    table.ForeignKey(
+                        name: "FK_Faunas_AspNetUsers_SubmitterId",
+                        column: x => x.SubmitterId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -160,6 +188,11 @@ namespace CitizenScience.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Faunas_SubmitterId",
+                table: "Faunas",
+                column: "SubmitterId");
+
+            migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName");
@@ -192,6 +225,9 @@ namespace CitizenScience.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Faunas");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

@@ -1,4 +1,5 @@
 ﻿@using CitizenScience.Models
+
 <script src="~/js/drawMap.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNmEdwEFOm_I2jY6WqN98p_QItuuYfF4s&callback=initMap"></script>
 
@@ -9,54 +10,41 @@
     <select name="name" id="name">
         @foreach (Fauna item in ViewBag.listPopulate)
         {
-            <option value=@item.FaunaDescripton>@item.FaunaDescripton</option>
+            <option value=@item.FaunaName>@item.FaunaName</option>
         }
     </select>
     <button type="submit" class="btn">Search</button>
 </form>
+
 <div id="newdata"></div>
+
 <div class="row">
 
     @foreach (CitizenScience.Models.Fauna item in Model)
     {
-        string photoImage = "";
-        if (item.FaunaPhoto != null)
-        {
-
-            photoImage = String.Format("data:image/gif;base64," + Convert.ToBase64String(item.FaunaPhoto));
+         
             var flo = item.FaunaLatitude;
             var fla = item.FaunaLongitude;
             Console.WriteLine(flo + " " + fla);
 
-            @*<script>
-                    function initMap() {
-                        var myLatLng = { lat: flo, lng: fla };
 
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 4,
-                            center: myLatLng
-                        });
-
-                        var marker = new google.maps.Marker({
-                            position: myLatLng,
-                            map: map,
-                            title: 'Hello World!'
-                        });
-                    }
-                </script>*@
         }
         <div class="results"></div>
 
-        <div class="col s12 m5 xs12">
+        @*<div class="col s12 m5 xs12">
             <div class="card-panel teal">
                 <span class="white-text">
-                    <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
+                    <h5>Name: @item.FaunaName</h5> 
+                    <hr />
+                    <h6>Description: @item.FaunaDescripton</h6>
+                    <p>Height: @item.FaunaHeight</p>
+                    <p>Length: @item.FaunaLength</p>
                     <img src="@photoImage" alt="@item.FaunaPhoto.Length" />
 
                 </span>
             </div>
-        </div>
+        </div>*@
     }
 </div>
-<h4>Data at a glance</h4>
+<h4>Where?</h4>
 <div id="map"></div>

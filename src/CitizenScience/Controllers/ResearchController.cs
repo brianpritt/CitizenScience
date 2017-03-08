@@ -28,12 +28,13 @@ namespace CitizenScience.Controllers
             
         }
         [HttpPost]
-        public IActionResult Index(string name) {
+        public IActionResult Result(string name) {
+            Console.WriteLine(name);
             List<Fauna> result = new List<Fauna>();
             var thisList = db.Faunas.ToList();
             foreach(Fauna li in thisList)
             {
-                if(name == li.FaunaDescripton)
+                if(name == li.FaunaName)
                 {
                     result.Add(li);
                 }

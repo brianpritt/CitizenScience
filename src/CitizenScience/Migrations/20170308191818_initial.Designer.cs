@@ -8,8 +8,8 @@ using CitizenScience.Models;
 namespace CitizenScience.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170306031813_moreclass")]
-    partial class moreclass
+    [Migration("20170308191818_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,13 +73,17 @@ namespace CitizenScience.Migrations
 
                     b.Property<string>("FaunaColor");
 
+                    b.Property<DateTime>("FaunaDate");
+
                     b.Property<string>("FaunaDescripton");
 
                     b.Property<int>("FaunaHeight");
 
+                    b.Property<string>("FaunaLatitude");
+
                     b.Property<int>("FaunaLength");
 
-                    b.Property<string>("FaunaLocation");
+                    b.Property<string>("FaunaLongitude");
 
                     b.Property<string>("FaunaName");
 
