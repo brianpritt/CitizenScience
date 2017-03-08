@@ -16,9 +16,11 @@ namespace CitizenScience.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+                ViewBag.listPopulate = db.Faunas.ToList();
                 List<Fauna> allList = db.Faunas.ToList();
                 return View(allList);
             }
+
             else
             {
                 return View();
@@ -36,6 +38,7 @@ namespace CitizenScience.Controllers
                     result.Add(li);
                 }
             }
+            ViewBag.listPopulate = db.Faunas.ToList();
             Console.WriteLine("This is result: " + result);
             return View(result);
 

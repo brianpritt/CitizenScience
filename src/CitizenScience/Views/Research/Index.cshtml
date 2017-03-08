@@ -7,7 +7,7 @@
     <hr />
     <h3>Data Quick-Sort</h3>
     <select name="name" id="name">
-        @foreach (Fauna item in Model)
+        @foreach (Fauna item in ViewBag.listPopulate)
         {
             <option value=@item.FaunaDescripton>@item.FaunaDescripton</option>
         }
