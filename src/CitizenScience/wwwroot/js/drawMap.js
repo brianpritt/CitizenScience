@@ -2,6 +2,7 @@
 
 
 //get location
+var map;
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -36,16 +37,16 @@ function initMap(lat, lon) {
     if (lat !== null) {
         var myLatLng = { lat: lat, lng: lon };
 
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: myLatLng
         });
 
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-        });
+        ////var marker = new google.maps.Marker({
+        ////    position: myLatLng,
+        ////    map: map,
+        ////    title: 'Hello World!'
+        ////});
     }
     
 }
@@ -55,6 +56,7 @@ function initMap(lat, lon) {
 
 function addMarker(pos) {
     if (pos != null) {
+        console.log(pos);
         var marker = new google.maps.Marker({
             position: pos,
             map: map,
@@ -62,6 +64,7 @@ function addMarker(pos) {
         })
     }
 }
+
 //Document ready, ajax and mark map
 $(document).ready(function () {
     $("#data-form").submit(function (event) {
@@ -109,5 +112,6 @@ $(document).ready(function () {
             })
         })
     })
+
 })
-//This wont work because result is a view.... how longdi it take for me to figure that one out???
+
