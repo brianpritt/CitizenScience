@@ -1,7 +1,5 @@
-﻿//draw map - get user location and draw a map there.
-
-
-//get location
+﻿
+//get curent location
 var map;
 var options = {
     enableHighAccuracy: true,
@@ -44,9 +42,8 @@ function initMap(lat, lon) {
     }
 }
 //end draw map//
+
 //add markers//
-
-
 function addMarker(pos) {
     if (pos != null) {
         console.log(pos);
@@ -63,7 +60,7 @@ $(document).ready(function () {
     $("#data-form").submit(function (event) {
         event.preventDefault();
         var thisResult = $('#name').attr("value");
-        
+        //gather search results, return view
         $.ajax({
             url: '/Research/Result/',
             type: 'POST',
@@ -74,6 +71,7 @@ $(document).ready(function () {
                 $("#newdata").html(result);
             }
         })
+        //gather search results, return Json object to console, at the same time as search result.
         $.ajax({
             url: '/Research/API/',
             type: 'POST',

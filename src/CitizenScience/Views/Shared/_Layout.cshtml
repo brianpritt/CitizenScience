@@ -19,34 +19,17 @@
     <title></title>
 </head>
 <body>
-    
-        <nav>
-            <div class="nav-wrapper grey darken-2">
-                <a class="brand-logo">Citizen Science </a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
-                        <li>@using (Html.BeginForm("LogOff", "Account"))
-                        {
-                            <input type="submit" class="btn btn-default" value="Log out" />
-                        }</li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
-                    }
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
+    <nav>
+        <div class="nav-wrapper grey darken-2">
+            <a class="brand-logo" href="/Home/">Citizen Science </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Collect", "Index", "Collection")</li>
+                        <li>@Html.ActionLink("Research", "Index", "Research")</li>
                         <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
                         <li>
                             @using (Html.BeginForm("LogOff", "Account"))
@@ -54,18 +37,39 @@
                             <input type="submit" class="btn btn-default" value="Log out" />
                         }
                     </li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
-                    }
-                </ul>
-            </div>
-        </nav>
-    
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
+                }
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Collect", "Index", "Collection")</li>
+                        <li>@Html.ActionLink("Research", "Index", "Research")</li>
+                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
+                        <li>
+                            @using (Html.BeginForm("LogOff", "Account"))
+                            {
+                                <input type="submit" class="btn btn-default" value="Log out" />
+                            }
+                        </li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
+                }
+            </ul>
+        </div>
+    </nav>
+
 
     <div>
         @RenderBody()
     </div>
 </body>
+
 </html>
