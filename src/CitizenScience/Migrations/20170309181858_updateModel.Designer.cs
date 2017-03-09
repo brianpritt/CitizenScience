@@ -8,8 +8,8 @@ using CitizenScience.Models;
 namespace CitizenScience.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170309081117_initial")]
-    partial class initial
+    [Migration("20170309181858_updateModel")]
+    partial class updateModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,6 +71,10 @@ namespace CitizenScience.Migrations
                     b.Property<int>("FaunaId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("ApplicationUserId");
+
+                    b.Property<string>("ApplicationUserId1");
+
                     b.Property<string>("FaunaColor");
 
                     b.Property<string>("FaunaDate");
@@ -89,11 +93,9 @@ namespace CitizenScience.Migrations
 
                     b.Property<byte[]>("FaunaPhoto");
 
-                    b.Property<string>("SubmitterId");
-
                     b.HasKey("FaunaId");
 
-                    b.HasIndex("SubmitterId");
+                    b.HasIndex("ApplicationUserId1");
 
                     b.ToTable("Faunas");
                 });
@@ -207,9 +209,9 @@ namespace CitizenScience.Migrations
 
             modelBuilder.Entity("CitizenScience.Models.Fauna", b =>
                 {
-                    b.HasOne("CitizenScience.Models.ApplicationUser", "Submitter")
+                    b.HasOne("CitizenScience.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("SubmitterId");
+                        .HasForeignKey("ApplicationUserId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

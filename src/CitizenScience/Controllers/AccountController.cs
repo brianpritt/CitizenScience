@@ -4,6 +4,7 @@ using CitizenScience.Models;
 using System.Threading.Tasks;
 using System.Linq;
 using CitizenScience.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace CitizenScience.Controllers
 {
@@ -26,9 +27,8 @@ namespace CitizenScience.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-
-                var userSub = _db.Faunas.Where(p => p.Submitter.Id == _userManager.GetUserId(HttpContext.User));
-                return View(userSub.ToList());
+                   
+                return View();
             }
             else
             {

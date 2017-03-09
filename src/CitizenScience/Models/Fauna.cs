@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 
 
 namespace CitizenScience.Models
@@ -20,8 +22,8 @@ namespace CitizenScience.Models
         public string FaunaLatitude { get; set; }
         public string FaunaLongitude { get; set; }
         public string FaunaDate { get; set; }
-        public string SubmitterId { get; set; }
-        public virtual ApplicationUser Submitter { get; set; }
+        public int ApplicationUserId { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public Fauna() { }
         public Fauna(byte[] faunaPhoto, string faunaName, string faunaDescripion, int faunaLength, int faunaHeight, string faunaColor, string faunaLatitude, string faunaLongitude, DateTime faunaDate) {

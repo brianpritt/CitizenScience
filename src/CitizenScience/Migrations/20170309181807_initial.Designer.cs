@@ -8,9 +8,10 @@ using CitizenScience.Models;
 namespace CitizenScience.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170309181807_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -29,6 +30,8 @@ namespace CitizenScience.Migrations
                         .HasAnnotation("MaxLength", 256);
 
                     b.Property<bool>("EmailConfirmed");
+
+                    b.Property<int?>("FaunaId");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -55,6 +58,8 @@ namespace CitizenScience.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FaunaId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -69,10 +74,6 @@ namespace CitizenScience.Migrations
                 {
                     b.Property<int>("FaunaId")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ApplicationUserId");
-
-                    b.Property<string>("ApplicationUserId1");
 
                     b.Property<string>("FaunaColor");
 
@@ -93,8 +94,6 @@ namespace CitizenScience.Migrations
                     b.Property<byte[]>("FaunaPhoto");
 
                     b.HasKey("FaunaId");
-
-                    b.HasIndex("ApplicationUserId1");
 
                     b.ToTable("Faunas");
                 });
@@ -206,11 +205,11 @@ namespace CitizenScience.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("CitizenScience.Models.Fauna", b =>
+            modelBuilder.Entity("CitizenScience.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("CitizenScience.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId1");
+                    b.HasOne("CitizenScience.Models.Fauna")
+                        .WithMany("Submitter")
+                        .HasForeignKey("FaunaId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
