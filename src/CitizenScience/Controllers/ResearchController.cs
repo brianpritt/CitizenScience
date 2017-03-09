@@ -29,7 +29,7 @@ namespace CitizenScience.Controllers
         }
         [HttpPost]
         public IActionResult Result(string name) {
-            Console.WriteLine(name);
+            
             List<Fauna> result = new List<Fauna>();
             var thisList = db.Faunas.ToList();
             foreach(Fauna li in thisList)
@@ -42,7 +42,22 @@ namespace CitizenScience.Controllers
             ViewBag.listPopulate = db.Faunas.ToList();
             Console.WriteLine("This is result: " + result);
             return View(result);
-
+        }
+        [HttpPost]
+        public IActionResult API(string name)
+        {
+            
+            List<Fauna> resultAPI = new List<Fauna>();
+            var thisList = db.Faunas.ToList();
+            foreach (Fauna li in thisList)
+            {
+                if (name == li.FaunaName)
+                {
+                    resultAPI.Add(li);
+                }
+            }
+            Console.WriteLine("This is result: " + resultAPI);
+            return Json(resultAPI);
         }
     }
 }

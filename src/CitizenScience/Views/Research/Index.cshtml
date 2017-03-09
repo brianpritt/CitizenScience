@@ -3,48 +3,35 @@
 <script src="~/js/drawMap.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNmEdwEFOm_I2jY6WqN98p_QItuuYfF4s&callback=initMap"></script>
 
+<div class="container">
+    <form id="data-form" asp-action="Index" asp-controller="Research" method="post" enctype="multipart/form-data">
+        <hr />
+        <h3>Data Quick-Sort</h3>
+        <select name="name" id="name">
+            @foreach (Fauna item in ViewBag.listPopulate)
+            {
+                <option value=@item.FaunaName>@item.FaunaName</option>
+            }
+        </select>
+        <button type="submit" class="btn">Search</button>
+    </form>
+    <form id="api-call" asp-action="API" asp-controller="Research" method="post" enctype="multipart/form-data">
+        <select name="name" id="name">
+            @foreach (Fauna item in ViewBag.listPopulate)
+            {
+                <option value=@item.FaunaName>@item.FaunaName</option>
+            }
+        </select>
+        <button type="submit" class="btn">Json Return</button>
+    </form> 
 
-<form id="data-form" asp-action="Index" asp-controller="Research" method="post" enctype="multipart/form-data">
-    <hr />
-    <h3>Data Quick-Sort</h3>
-    <select name="name" id="name">
-        @foreach (Fauna item in ViewBag.listPopulate)
-        {
-            <option value=@item.FaunaName>@item.FaunaName</option>
-        }
-    </select>
-    <button type="submit" class="btn">Search</button>
-</form>
 
 <div id="newdata"></div>
 
 <div class="row">
-
-    @foreach (CitizenScience.Models.Fauna item in Model)
-    {
-         
-            var flo = item.FaunaLatitude;
-            var fla = item.FaunaLongitude;
-            Console.WriteLine(flo + " " + fla);
-
-
-        }
-        <div class="results"></div>
-
-        @*<div class="col s12 m5 xs12">
-            <div class="card-panel teal">
-                <span class="white-text">
-                    <h5>Name: @item.FaunaName</h5> 
-                    <hr />
-                    <h6>Description: @item.FaunaDescripton</h6>
-                    <p>Height: @item.FaunaHeight</p>
-                    <p>Length: @item.FaunaLength</p>
-                    <img src="@photoImage" alt="@item.FaunaPhoto.Length" />
-
-                </span>
-            </div>
-        </div>*@
-    }
+   <div class="results"></div>   
 </div>
 <h4>Where?</h4>
+
 <div id="map"></div>
+</div>
