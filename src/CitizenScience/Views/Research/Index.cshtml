@@ -15,6 +15,7 @@
         </select>
         <button type="submit" class="btn">Search</button>
     </form>
+        
     <form id="api-call" asp-action="API" asp-controller="Research" method="post" enctype="multipart/form-data">
         <select name="name" id="name">
             @foreach (Fauna item in ViewBag.listPopulate)

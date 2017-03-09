@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace CitizenScience.Models
 {
@@ -10,7 +9,7 @@ namespace CitizenScience.Models
     
     public class Fauna
     {
-
+        [Key]
         public int FaunaId { get; set;}
         public byte[] FaunaPhoto { get; set; }
         public string FaunaName { get; set; }
@@ -20,7 +19,8 @@ namespace CitizenScience.Models
         public string FaunaColor { get; set; }
         public string FaunaLatitude { get; set; }
         public string FaunaLongitude { get; set; }
-        public DateTime FaunaDate { get; set; }
+        public string FaunaDate { get; set; }
+        public string SubmitterId { get; set; }
         public virtual ApplicationUser Submitter { get; set; }
 
         public Fauna() { }
@@ -34,6 +34,7 @@ namespace CitizenScience.Models
             FaunaLatitude = faunaLatitude;
             FaunaLongitude = faunaLongitude;
             FaunaDate = FaunaDate;
+           
         }
     }
     

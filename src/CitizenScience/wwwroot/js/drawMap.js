@@ -41,14 +41,7 @@ function initMap(lat, lon) {
             zoom: 10,
             center: myLatLng
         });
-
-        ////var marker = new google.maps.Marker({
-        ////    position: myLatLng,
-        ////    map: map,
-        ////    title: 'Hello World!'
-        ////});
     }
-    
 }
 //end draw map//
 //add markers//
@@ -87,7 +80,7 @@ $(document).ready(function () {
             data: $(this).serialize(),
             datatype: 'json',
             success: function (result) {
-                console.log(result);
+                
                 result.forEach(function(item){
                     var lat = parseFloat(item.faunaLatitude);
                     var lon = parseFloat(item.faunaLongitude);
@@ -100,7 +93,7 @@ $(document).ready(function () {
         $("#api-call").submit(function(event){
             event.preventDefault();
             var thisResult = $('#api-call').attr("value");
-            console.log($(this))
+            
             $.ajax({
                 url: '/Research/API/',
                 type: 'POST',
@@ -112,6 +105,5 @@ $(document).ready(function () {
             })
         })
     })
-
 })
 

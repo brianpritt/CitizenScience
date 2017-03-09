@@ -72,7 +72,7 @@ namespace CitizenScience.Migrations
 
                     b.Property<string>("FaunaColor");
 
-                    b.Property<DateTime>("FaunaDate");
+                    b.Property<string>("FaunaDate");
 
                     b.Property<string>("FaunaDescripton");
 

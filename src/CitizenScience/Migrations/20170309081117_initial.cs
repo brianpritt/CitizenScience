@@ -69,7 +69,7 @@ namespace CitizenScience.Migrations
                     FaunaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FaunaColor = table.Column<string>(nullable: true),
-                    FaunaDate = table.Column<DateTime>(nullable: false),
+                    FaunaDate = table.Column<string>(nullable: true),
                     FaunaDescripton = table.Column<string>(nullable: true),
                     FaunaHeight = table.Column<int>(nullable: false),
                     FaunaLatitude = table.Column<string>(nullable: true),

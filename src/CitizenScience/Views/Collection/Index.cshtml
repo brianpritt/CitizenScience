@@ -6,13 +6,14 @@
         <div class="col s12 m12">
             <div class="card-panel grey darken-2">
                 <span class="white-text">
-                    <h3>Collection Form</h3>
+                    <h5 class="centering">Collection Form</h5>
+                    <hr />
                     <form class="theform" asp-action="Create" asp-controller="Collection" method="post" enctype="multipart/form-data">
                         <label for="name">Name of species</label>
                         <input type="text" id="title" name="name" required />
                         <br />
-                        <label for="picture">Photo</label>
-                        <input type="file" id="picture" name="picture" class="btn" />
+                        <label for="picture">Photo: </label>
+                        <input type="file" id="picture" name="picture" class="" />
                         <br />
                         <label for="description">Description</label>
                         <input type="text" id="description" name="description" required />
