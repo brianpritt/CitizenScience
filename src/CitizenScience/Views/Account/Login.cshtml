@@ -11,10 +11,10 @@
         <div class="card-panel white">
             <span class="black-text">
                 <h3>Log in to your account</h3>
-                <hr />
+                <br />
                 @using (Html.BeginForm())
                 {
-                    @Html.LabelFor(m => m.Email)
+                    <label for="Email">User Name</label>
                     @Html.TextBoxFor(m => m.Email)
 
                     @Html.LabelFor(m => m.Password)

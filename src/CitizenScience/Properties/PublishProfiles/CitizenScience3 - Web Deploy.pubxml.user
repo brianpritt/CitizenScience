@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiAXq2qPEVUW9x2ILx3/u+wAAAAACAAAAAAAQZgAAAAEAACAAAADo60kgzoJkEH833F9Y9+Wfvag7Rjp/LLyZVRDuid530AAAAAAOgAAAAAIAACAAAAD4up66/XULqmfc5YQEQDuPV3BWk5ib3COF6u5+2KScBYAAAADEQXjI9ExeblWO39GMVUECh1WQ2thjtVDsPS522NXW6tdPdRH6aX6LgL7E7EVHsYCEqmf3X6Phpaq01IkItqFD0KOybx4/LKUS4uBf3Wn/yB1UXUPnDywlD2eKYi/+CC78kU4lEVImxIskIfq4pAWTY0Fu3ksv+Bo06wxt2KhEDEAAAAAy1wx3f4wjz2GjRU0OHmKXfz2UGuvUSXb3NgBxAk/9MsdaUoGslMn5eO3IjAUa6F8git9Rx2oiWvprd8hayAcF</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:citizenscience3dbserver.database.windows.net,1433;Initial Catalog=CitizenScience3_db;User Id=brianpritt@citizenscience3dbserver;Password=!Selfdestruct1</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -3,9 +3,22 @@ img{
     width:200px;
 }
 #map {
-        height: 400px;
-        width: 600px;
+    height: 500px;
+    width: 500px;
 }
 .centering{
     text-align:center;
+}
+.map-design{
+    margin: auto;
+    padding-bottom: 20px;
+}
+.makeroom{
+    height: 30px;
+}
+@media screen and (max-width: 480px){
+    #map{
+        height:250px;
+        width:250px;
+    }
 }
