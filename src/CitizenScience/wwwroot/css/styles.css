@@ -1,4 +1,16 @@
 ﻿
+body{
+    background-color: darkslategrey;
+
+}
+
+.nav-wrapper{
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+
+
 img{
     width:200px;
 }

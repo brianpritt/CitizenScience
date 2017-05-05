@@ -1,75 +1,13 @@
 ﻿<!DOCTYPE html>
 @using System.Security.Claims
 <html>
-<head>
-
-    <meta name="viewport" content="width=device-width" />
-    <script src="~/js/jquery-3.1.1.min.js"></script>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
-    <script>
-        $(document).ready(function () {
-            $('select').material_select();
-            $(".button-collapse").sideNav();
-        });
-    </script>
-
-    <title>Citizen Science</title>
-</head>
-<body>
-    <nav>
-        <div class="nav-wrapper grey darken-2">
-            <a class="brand-logo" href="/Home/">Citizen Science </a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li>@Html.ActionLink("Collect", "Index", "Collection")</li>
-                        <li>@Html.ActionLink("Research", "Index", "Research")</li>
-                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
-                        <li>
-                            @using (Html.BeginForm("LogOff", "Account"))
-                        {
-                            <input type="submit" class="btn btn-default" value="Log out" />
-                        }
-                    </li>
-                }
-                else
-                {
-                    <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
-                }
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li>@Html.ActionLink("Collect", "Index", "Collection")</li>
-                        <li>@Html.ActionLink("Research", "Index", "Research")</li>
-                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Account")</li>
-                        <li>
-                            @using (Html.BeginForm("LogOff", "Account"))
-                            {
-                                <input type="submit" class="btn btn-default" value="Log out" />
-                            }
-                        </li>
-                }
-                else
-                {
-                    <li>@Html.ActionLink("Login/Register", "Index", "Account")</li>
-                }
-            </ul>
+    <head>
+        @Html.Partial("head");
+    </head>
+    <body>
+        @Html.Partial("navbar");
+        <div>
+               @RenderBody()
         </div>
-    </nav>
-
-
-    <div>
-        @RenderBody()
-    </div>
-</body>
-
+    </body>
 </html>

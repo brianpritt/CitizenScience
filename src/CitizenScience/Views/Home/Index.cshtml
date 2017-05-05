@@ -5,7 +5,27 @@
     <div class="centering">
         <p>Welcome @User.Identity.Name</p>
         <p>Please choose a portal:</p>
-        <p>@Html.ActionLink("Collection Portal", "Index", "Collection") | @Html.ActionLink("Research Portal", "Index", "Research")</p>
+        <!-- <p>@Html.ActionLink("Collection Portal", "Index", "Collection") | @Html.ActionLink("Research Portal", "Index", "Research")</p> -->
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card col-m">
+                    <h2>Data collection</h2>
+                    <p>fFor quick access to data collection form</p>
+                    <div class="card-action">
+                        @Html.ActionLink("Collection Portal", "Index", "Collection")
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card col-m">
+                    <h2>Research</h2>
+                    <p>For quick lists, adn detailed lists of data already collected</p>
+                    <div class="card-action">
+                        @Html.ActionLink("Research Portal", "Index", "Research")
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 }

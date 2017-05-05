@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using CitizenScience.Models
+@{
+    <form id="data-form" asp-action="Index" asp-controller="Research" method="post" enctype="multipart/form-data">
+        <hr />
+        <h3>Data Quick-Sort</h3>
+        <select name="name" id="name">
+            @foreach (Fauna item in ViewBag.listPopulate)
+            {
+                <option value=@item.FaunaName>@item.FaunaName</option>
+            }
+        </select>
+        <button type="submit" class="btn">Search</button>
+    </form>
+
+    <form id="api-call" asp-action="API" asp-controller="Research" method="post" enctype="multipart/form-data">
+        <select name="name" id="name">
+            @foreach (Fauna item in ViewBag.listPopulate)
+            {
+                <option value=@item.FaunaName>@item.FaunaName</option>
+            }
+        </select>
+        <button type="submit" class="btn">Json Return</button>
+    </form>
+}

@@ -14,7 +14,7 @@ namespace CitizenScience.Models
 
         public ApplicationDbContext()
         {
-
+ 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

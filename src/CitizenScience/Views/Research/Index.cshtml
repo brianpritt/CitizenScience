@@ -5,27 +5,7 @@
 
 <div class="container">
 
-    <form id="data-form" asp-action="Index" asp-controller="Research" method="post" enctype="multipart/form-data">
-        <hr />
-        <h3>Data Quick-Sort</h3>
-        <select name="name" id="name">
-            @foreach (Fauna item in ViewBag.listPopulate)
-            {
-                <option value=@item.FaunaName>@item.FaunaName</option>
-            }
-        </select>
-        <button type="submit" class="btn">Search</button>
-    </form>
-
-    <form id="api-call" asp-action="API" asp-controller="Research" method="post" enctype="multipart/form-data">
-        <select name="name" id="name">
-            @foreach (Fauna item in ViewBag.listPopulate)
-            {
-                <option value=@item.FaunaName>@item.FaunaName</option>
-            }
-        </select>
-        <button type="submit" class="btn">Json Return</button>
-    </form>
+    @Html.Partial("result_form");
 
 
     <div id="newdata"></div>
