@@ -1,16 +1,20 @@
 ﻿
 body{
-    background-color: darkslategrey;
-
+    background-color: #000;
 }
 
 .nav-wrapper{
     background-color: rgba(0,0,0,0.6);
 }
 
+.about-top{
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
 
-
-
+.card{
+    border-radius: 0.8px;
+}
 img{
     width:200px;
 }
@@ -33,4 +37,7 @@ img{
         height:250px;
         width:250px;
     }
+}
+.top-section{
+    background-image: url("../images/main_bg.jpg");
 }

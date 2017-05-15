@@ -1,7 +1,17 @@
 ﻿<script src="~/js/getLocation.js"></script>
+<script src="~/js/loadform.js"></script>
 
 @if (User.Identity.IsAuthenticated)
 {
+    <form id="selectForm">
+        <select>
+            <option value=fauna>Fauna</option>
+            <option value="flora">Flora</option>
+            <option value="geology">Geology</option>
+            <option value="archaeology">Archaeology</option>
+        </select>
+        <button class="btn" type="submit"></button>
+    </form>
     @Html.Partial("collect_form");
     
    <!--Add Previous Submissions here, for some reason User Identity isn't getting added-->

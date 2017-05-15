@@ -1,28 +1,54 @@
 ﻿@model List<CitizenScience.Models.Fauna>
 @using System.Security.Claims
-
+@using CitizenScience.Models;
 @if (User.Identity.IsAuthenticated)
 {
 
-    <div class="index-middle">
-        <p class="centering">@Html.ActionLink("Collection Portal", "Index", "Collection") | @Html.ActionLink("Research Portal", "Index", "Research")</p>
-
-    </div>
-    @*<h5 class="centering">Submission History</h5>
-
-    @foreach (CitizenScience.Models.Fauna item in Model)
+    <div class="centering">
+        <div class="message-center"></div>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="col s12 m12">
+                    <div class="card col-m">
+                        <h2>Data collection</h2>
+                        <p>Quick access to data collection form</p>
+                        <div class="card-action">
+                            @Html.ActionLink("Collection Portal", "Index", "Collection")
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12">
+                    <div class="card col-m">
+                        <h2>Research</h2>
+                        <p>Quick lists, adn detailed lists of data already collected</p>
+                        <div class="card-action">
+                            @Html.ActionLink("Research Portal", "Index", "Research")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="col s12 m6">
+            <div class="card col-m submission-history">
+                <h3>Submission History</h3>
+@foreach (CitizenScience.Models.Fauna item in Model)
+{
+    string photoImage = "";
+    if (item.FaunaPhoto != null)
     {
-        string photoImage = "";
-        if (item.FaunaPhoto != null)
-        {
-            var base64File = Convert.ToBase64String(item.FaunaPhoto);
-            photoImage = String.Format("data:image/gif;base64,{0}", base64File);
+        var base64File = Convert.ToBase64String(item.FaunaPhoto);
+        photoImage = String.Format("data:image/gif;base64,{0}", base64File);
 
-        }
-        <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
+    }
+    <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
         <img src="@photoImage" />
         <p>@item.FaunaPhoto</p>
-    }*@
+}
+            </div>
+        </div>
+        </div>
+    </div>
+   
     <hr />
 }
 

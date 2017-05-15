@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using CitizenScience.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace CitizenScience.Controllers
 {
@@ -25,10 +26,17 @@ namespace CitizenScience.Controllers
 
         public IActionResult Index()
         {
+          
             if (User.Identity.IsAuthenticated)
             {
-                   
-                return View();
+                List <Fauna> userSubmitted = new List<Fauna>();
+                var thisList = _db.Faunas.ToList();
+                foreach(Fauna li in thisList)
+                {
+                    userSubmitted.Add(li);
+                }  
+               
+                return View(userSubmitted);
             }
             else
             {

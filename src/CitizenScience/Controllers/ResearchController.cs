@@ -44,7 +44,7 @@ namespace CitizenScience.Controllers
             return View(result);
         }
         [HttpPost]
-        public IActionResult API(string name)
+        public IActionResult API(string name) 
         {
             
             List<Fauna> resultAPI = new List<Fauna>();
