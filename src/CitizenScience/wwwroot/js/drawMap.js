@@ -27,14 +27,14 @@ function error(err) {
     console.warn(err.code + ':' + err.message);
     console.log("if you are using chrome it is possible it is blocking access");
 }
-navigator.geolocation.getCurrentPosition(success,error, options);
+
 //End get location//
 
 //draw map//
 function initMap(lat, lon) {
     if (lat !== null) {
         var myLatLng = { lat: lat, lng: lon };
-
+        console.log(myLatLng);
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: myLatLng
@@ -57,6 +57,7 @@ function addMarker(pos) {
 
 //Document ready, ajax and mark map
 $(document).ready(function () {
+    navigator.geolocation.getCurrentPosition(success, error, options);
     $("#data-form").submit(function (event) {
         event.preventDefault();
         var thisResult = $('#name').attr("value");

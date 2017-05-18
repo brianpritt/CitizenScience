@@ -4,10 +4,12 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNmEdwEFOm_I2jY6WqN98p_QItuuYfF4s&callback=initMap"></script>
 
 <div class="container">
-
-    @Html.Partial("result_form");
-
-
+    <div class="row">
+        <div class="col sm12 md6">
+            @Html.Partial("result_form");
+        </div>
+        
+       
     <div id="newdata"></div>
 
     <div class="row">
@@ -15,6 +17,7 @@
     </div>
     <h4>Location</h4>
 
-    <div id="map" class="map-design"></div>
+    
     <div class="makeroom"></div>
 </div>
+    </div>

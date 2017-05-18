@@ -39,5 +39,9 @@ img{
     }
 }
 .top-section{
-    background-image: url("../images/main_bg.jpg");
+    background: url("../images/main_bg.jpg"), no-repeat,center,center,fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
