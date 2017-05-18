@@ -30,28 +30,25 @@
         
         <div class="col s12 m6">
             <div class="card col-m submission-history">
-                <h3>Submission History</h3>
-@foreach (CitizenScience.Models.Fauna item in Model)
-{
-    string photoImage = "";
-    if (item.FaunaPhoto != null)
-    {
-        var base64File = Convert.ToBase64String(item.FaunaPhoto);
-        photoImage = String.Format("data:image/gif;base64,{0}", base64File);
-
-    }
-    <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
-        <img src="@photoImage" />
-        <p>@item.FaunaPhoto</p>
-}
+                <h3>Submissions</h3>
+                <hr />
+                @foreach (CitizenScience.Models.Fauna item in Model)
+                {
+                    string photoImage = "";
+                    if (item.FaunaPhoto != null)
+                    {
+                        var base64File = Convert.ToBase64String(item.FaunaPhoto);
+                        photoImage = String.Format("data:image/gif;base64,{0}", base64File);
+                    }
+                    <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
+                    <img src="@photoImage" />
+                    <p>@item.FaunaPhoto</p>
+                }
+                </div>
             </div>
         </div>
-        </div>
     </div>
-   
-    <hr />
 }
-
 else
 {
     <h5 class="centering">Please @Html.ActionLink("Login ", "Login", "Account") or @Html.ActionLink("Register ", "Register", "Account")</h5>

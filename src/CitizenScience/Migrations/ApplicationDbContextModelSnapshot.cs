@@ -70,9 +70,7 @@ namespace CitizenScience.Migrations
                     b.Property<int>("FaunaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ApplicationUserId");
-
-                    b.Property<string>("ApplicationUserId1");
+                    b.Property<string>("ApplicationUserId");
 
                     b.Property<string>("FaunaColor");
 
@@ -94,7 +92,7 @@ namespace CitizenScience.Migrations
 
                     b.HasKey("FaunaId");
 
-                    b.HasIndex("ApplicationUserId1");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Faunas");
                 });
@@ -209,8 +207,8 @@ namespace CitizenScience.Migrations
             modelBuilder.Entity("CitizenScience.Models.Fauna", b =>
                 {
                     b.HasOne("CitizenScience.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId1");
+                        .WithMany("Faunas")
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

@@ -2,16 +2,14 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @using CitizenScience.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    <form id="data-form" asp-action="Index" asp-controller="Research" method="post" enctype="multipart/form-data">
+
+    <form id="data-form" asp-action="Result" asp-controller="Research" method="post" enctype="multipart/form-data">
         <hr />
-        <h3>Data Quick-Sort</h3>
-        <select name="name" id="name">
-            @foreach (Fauna item in ViewBag.listPopulate)
-            {
-                <option value=@item.FaunaName>@item.FaunaName</option>
-            }
-        </select>
+        <h3>Data Quick-Search</h3>
+        <label for="search">Search</label>
+        <input type="text" id="sea" name="search" />
         <button type="submit" class="btn">Search</button>
     </form>
 

@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Identity;
 using CitizenScience.Models;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Security.Claims;
 using CitizenScience.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 namespace CitizenScience.Controllers
 {
+
     public class AccountController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -34,9 +36,10 @@ namespace CitizenScience.Controllers
                 foreach(Fauna li in thisList)
                 {
                     userSubmitted.Add(li);
-                }  
-               
+                }
+                var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
                 return View(userSubmitted);
+
             }
             else
             {

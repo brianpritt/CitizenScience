@@ -6,20 +6,25 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using CitizenScience.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Diagnostics;
 
 namespace CitizenScience.Controllers
 {
+    
     public class CollectionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
         public IActionResult Index()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(IFormFile picture, string name, string description, int length, int height, string color, string latitude, string longitude, DateTime date)
-        {
+        public IActionResult Create(string name, IFormFile picture, string description, int height,  int length, string color, string latitude, string longitude, DateTime date)
+         {
             byte[] newPicture = new byte[0];
+            Debug.WriteLine("##########################################################################" +name + description + height + length + color + latitude + longitude + date + "##################################");
             if (picture != null)
             {
                 using (Stream fileStream = picture.OpenReadStream())
@@ -30,10 +35,16 @@ namespace CitizenScience.Controllers
                 }
             }
             Fauna newFauna = new Fauna(newPicture, name, description, length, height, color, latitude, longitude, date);
+            //newFauna.ApplicationUser = _userManager.GetUser(User); 
             db.Faunas.Add(newFauna);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Account");
 
+        }
+        [HttpPost ]
+        public IActionResult SelectForm()
+        {
+            return PartialView("collect_form.cshtml");
         }
         public IActionResult MapLocation()
         {

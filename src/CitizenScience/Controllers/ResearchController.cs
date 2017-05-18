@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using CitizenScience.Models;
-
+using System.Diagnostics;
 
 namespace CitizenScience.Controllers
 {
@@ -16,9 +16,9 @@ namespace CitizenScience.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                ViewBag.listPopulate = db.Faunas.ToList();
+                ViewBag.listPopulate  = db.Faunas.ToList();
                 List<Fauna> allList = db.Faunas.ToList();
-                return View(allList);
+                return View();
             }
 
             else
@@ -28,20 +28,28 @@ namespace CitizenScience.Controllers
             
         }
         [HttpPost]
-        public IActionResult Result(string name) {
-            
-            List<Fauna> result = new List<Fauna>();
-            var thisList = db.Faunas.ToList();
-            foreach(Fauna li in thisList)
+        public IActionResult Result(string search) {
+            Debug.WriteLine("#############" + search);
+            var results = from FaunaName in db.Faunas
+                         select FaunaName;
+
+            if (!String.IsNullOrEmpty(search))
             {
-                if(name == li.FaunaName)
-                {
-                    result.Add(li);
-                }
+               
+                results = results.Where(s => s.FaunaName.Contains(search));
             }
+            //List<Fauna> result = new List<Fauna>();
+            //var thisList = db.Faunas.ToList();
+            //foreach(Fauna li in thisList)
+            //{
+            //    if(name == li.FaunaName)
+            //    {
+            //        result.Add(li);
+            //    }
+            //}
             ViewBag.listPopulate = db.Faunas.ToList();
-            Console.WriteLine("This is result: " + result);
-            return View(result);
+            Console.WriteLine("This is result: " + results);
+            return View(results);
         }
         [HttpPost]
         public IActionResult API(string name) 
