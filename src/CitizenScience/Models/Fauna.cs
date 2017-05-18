@@ -22,6 +22,7 @@ namespace CitizenScience.Models
         public string FaunaLatitude { get; set; }
         public string FaunaLongitude { get; set; }
         public string FaunaDate { get; set; }
+        public string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         public Fauna() { }

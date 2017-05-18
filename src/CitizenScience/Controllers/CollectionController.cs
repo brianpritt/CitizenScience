@@ -15,7 +15,8 @@ namespace CitizenScience.Controllers
     public class CollectionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        
+        
         public IActionResult Index()
         {
             return View();
@@ -24,7 +25,6 @@ namespace CitizenScience.Controllers
         public IActionResult Create(string name, IFormFile picture, string description, int height,  int length, string color, string latitude, string longitude, DateTime date)
          {
             byte[] newPicture = new byte[0];
-            Debug.WriteLine("##########################################################################" +name + description + height + length + color + latitude + longitude + date + "##################################");
             if (picture != null)
             {
                 using (Stream fileStream = picture.OpenReadStream())
@@ -35,7 +35,7 @@ namespace CitizenScience.Controllers
                 }
             }
             Fauna newFauna = new Fauna(newPicture, name, description, length, height, color, latitude, longitude, date);
-            //newFauna.ApplicationUser = _userManager.GetUser(User); 
+            newFauna.UserId = User.Identity.Name; 
             db.Faunas.Add(newFauna);
             db.SaveChanges();
             return RedirectToAction("Index", "Account");

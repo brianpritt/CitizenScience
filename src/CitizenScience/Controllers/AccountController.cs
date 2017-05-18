@@ -35,7 +35,10 @@ namespace CitizenScience.Controllers
                 var thisList = _db.Faunas.ToList();
                 foreach(Fauna li in thisList)
                 {
-                    userSubmitted.Add(li);
+                    if (li.UserId == User.Identity.Name)
+                    {
+                        userSubmitted.Add(li);
+                    }
                 }
                 var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
                 return View(userSubmitted);

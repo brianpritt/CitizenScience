@@ -29,7 +29,6 @@ namespace CitizenScience.Controllers
         }
         [HttpPost]
         public IActionResult Result(string search) {
-            Debug.WriteLine("#############" + search);
             var results = from FaunaName in db.Faunas
                          select FaunaName;
 
@@ -38,17 +37,6 @@ namespace CitizenScience.Controllers
                
                 results = results.Where(s => s.FaunaName.Contains(search));
             }
-            //List<Fauna> result = new List<Fauna>();
-            //var thisList = db.Faunas.ToList();
-            //foreach(Fauna li in thisList)
-            //{
-            //    if(name == li.FaunaName)
-            //    {
-            //        result.Add(li);
-            //    }
-            //}
-            ViewBag.listPopulate = db.Faunas.ToList();
-            Console.WriteLine("This is result: " + results);
             return View(results);
         }
         [HttpPost]
