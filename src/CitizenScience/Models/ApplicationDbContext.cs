@@ -18,7 +18,8 @@ namespace CitizenScience.Models
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CitizenScience;integrated security=True");
+            options.UseSqlServer(@"Data Source=tcp:citizenscience4dbserver.database.windows.net,1433;Initial Catalog=CitizenScience4_db;User Id=brianpritt@citizenscience4dbserver;Password=!Selfdestruct1");
+            //Server = (localdb)\mssqllocaldb; Database = CitizenScience; integrated security = True
         }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {

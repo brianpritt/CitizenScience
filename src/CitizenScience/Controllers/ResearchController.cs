@@ -20,13 +20,19 @@ namespace CitizenScience.Controllers
                 List<Fauna> allList = db.Faunas.ToList();
                 return View();
             }
-
             else
             {
                 return View();
             }
             
         }
+
+        public IActionResult Details(int id)
+        {
+            var thisFauna = db.Faunas.FirstOrDefault(fauna => fauna.FaunaId == id);
+            return View(thisFauna);
+        }
+
         [HttpPost]
         public IActionResult Result(string search) {
             var results = from FaunaName in db.Faunas
@@ -42,7 +48,20 @@ namespace CitizenScience.Controllers
         [HttpPost]
         public IActionResult API(string name) 
         {
-            
+            //string v = Request.QueryString["param"];
+            //if (v != null)
+            //{
+            //    var results = from FaunaName in db.Faunas
+            //                  select FaunaName;
+
+            //    if (!String.IsNullOrEmpty(v))
+            //    {
+
+            //        results = results.Where(s => s.FaunaName.Contains(v));
+            //    }
+            //    return Json(results);
+            //}
+
             List<Fauna> resultAPI = new List<Fauna>();
             var thisList = db.Faunas.ToList();
             foreach (Fauna li in thisList)
@@ -53,7 +72,7 @@ namespace CitizenScience.Controllers
                 }
             }
             Console.WriteLine("This is result: " + resultAPI);
-            return Json(resultAPI);
+            return Json(null);
         }
     }
 }

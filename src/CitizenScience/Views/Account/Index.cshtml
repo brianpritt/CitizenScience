@@ -20,7 +20,7 @@
                 <div class="col s12 m12">
                     <div class="card col-m">
                         <h2>Research</h2>
-                        <p>Quick lists, adn detailed lists of data already collected</p>
+                        <p>Quick lists, and detailed lists of data already collected</p>
                         <div class="card-action">
                             @Html.ActionLink("Research Portal", "Index", "Research")
                         </div>
@@ -40,12 +40,17 @@
                         var base64File = Convert.ToBase64String(item.FaunaPhoto);
                         photoImage = String.Format("data:image/gif;base64,{0}", base64File);
                     }
-                    <h5>Name: @item.FaunaName Description: @item.FaunaDescripton</h5>
+                    <h5>Name: @item.FaunaName</h5>
+                    <p>Description: @item.FaunaDescripton</p>
                     <img src="@photoImage" />
-                    <p>@item.UserId</p>
-                }
-                </div>
+                    <p>
+                        @Html.ActionLink("Details", "Details", "Research", new { id = item.FaunaId })
+                        </p>
+                    <hr />
+                    }
+</div>
             </div>
+ 
         </div>
     </div>
 }

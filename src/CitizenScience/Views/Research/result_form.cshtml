@@ -6,17 +6,16 @@
 @{
     <div class="row">
         <div class="col s12 m12">
-            <div class="card blue lighten-3">
-                <div class="card-content white-text">
-                    <span class="card-title">Quick Search</span>
+            
+                    <h4 class="card-title">Quick Search</h4>
                     <form id="data-form" asp-action="Result" asp-controller="Research" method="post" enctype="multipart/form-data">
-                        <hr />
-                        <label for="search">Name</label>
-                        <input type="text" id="sea" name="search" />
-                        <button type="submit" class="btn">Search</button>
+                        
+                        <label for="search" style="display:inline-block;">Name</label>
+                        <input type="text" style="display:inline-block;" id="sea" name="search" />
+                        <button type="submit" style="display:inline-block" class="btn">Search</button>
                     </form>
 
-                    <form id="api-call" asp-action="API" asp-controller="Research" method="post" enctype="multipart/form-data">
+                    @*<form id="api-call" asp-action="API" asp-controller="Research" method="post" enctype="multipart/form-data">
                         <select name="name" id="name">
                             @foreach (Fauna item in ViewBag.listPopulate)
             {
@@ -24,9 +23,8 @@
                             }
                         </select>
                         <button type="submit" class="btn">Json Return</button>
-                    </form>
+                    </form>*@
                     </div>
                 </div>
-            </div>
-        </div>
+            
                     }

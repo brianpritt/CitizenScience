@@ -1,0 +1,35 @@
+﻿
+@model CitizenScience.Models.Fauna
+<script src="~/js/drawMap.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNmEdwEFOm_I2jY6WqN98p_QItuuYfF4s&callback=initMap"></script>
+@{
+    
+    string photoImage = "";
+    if (Model.FaunaPhoto != null)
+    {
+        photoImage = String.Format("data:image/gif;base64," + Convert.ToBase64String(Model.FaunaPhoto));
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+                <img class="card-photo" src="@photoImage" alt="@Model.FaunaPhoto.Length" />
+                <span class="card-title">@Model.FaunaName</span>
+            </div>
+            <div class="card-content">
+                <p>@Model.FaunaDescripton</p>
+                <p>Submitter: @Model.UserId</p>
+                <p>Height: @Model.FaunaHeight cm</p>
+                <p>Length: @Model.FaunaLength cm</p>
+                <p>Color: @Model.FaunaColor</p>
+                <p>Appoximate Location: Blocked By Azure Web Services. No SSL certificate present.</p>
+                
+                <div id="map" class="map-design"></div>
+            </div>
+            <div class="card-action">
+                @Html.ActionLink("Back to Search", "Index", "Research")
+            </div>
+        </div>
+    </div>
+</div>
+        }
+    }

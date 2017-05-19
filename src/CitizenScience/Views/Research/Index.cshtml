@@ -1,23 +1,18 @@
 ﻿@using CitizenScience.Models
 
 <script src="~/js/drawMap.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNmEdwEFOm_I2jY6WqN98p_QItuuYfF4s&callback=initMap"></script>
 
-<div class="container">
     <div class="row">
-        <div class="col sm12 md6">
-            @Html.Partial("result_form");
+        <div class="col sm12 m6 offset-m3">
+            @Html.Partial("result_form")
         </div>
-        
-       
+        @*<div class="col sm12 m6">
+            <div id="map" class="map-design"></div>
+         </div>*@
     <div id="newdata"></div>
-
+        </div>
     <div class="row">
         <div class="results"></div>
     </div>
-    <h4>Location</h4>
-
-    
     <div class="makeroom"></div>
-</div>
-    </div>
+    

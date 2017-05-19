@@ -17,36 +17,11 @@
         <div class="col s12 m6 xs12">
             <div class="card-panel grey darken-2">
                 <span class="white-text">
-                    <table style="margin-top:50px;">
-                        <thread>
-                            <tr>
-                                <th>Name</th>
-                                <th align="right">@item.FaunaName</th>
-                            </tr>
-                            <tr>
-                                <th>Description</th>
-                                <th>@item.FaunaDescripton</th>
-                            </tr>
-                            <tr>
-                                <th>Height</th>
-                                <th>@item.FaunaHeight</th>
-                            </tr>
-                            <tr>
-                                <th>Length</th>
-                                <th>@item.FaunaLength</th>
-                            </tr>
-                            <tr>
-                                <th>Submitter</th>
-                                <th>@item.UserId</th>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th><img src="@photoImage" alt="@item.FaunaPhoto.Length" /></th>
-                            </tr>
-
-                        </thread>
-                    </table>
-                    <div id="map" class="map-design"></div>
+                    <h3>@item.FaunaName</h3>
+                    <p>Approximate Location:</p>
+                    <p>@Html.ActionLink("Details", "Details", new { id = item.FaunaId }) </p>
+                    
+                    
                 </span>
             </div>
         </div>

@@ -6,6 +6,17 @@ body{
 .nav-wrapper{
     background-color: rgba(0,0,0,0.6);
 }
+.navbar-fixed {
+z-index: 999;
+}
+
+label {
+    display:block;
+    color: #000;
+}
+.card-photo{
+    max-width:600px;
+}
 
 .about-top{
     width: 100%;
